@@ -3,6 +3,7 @@ import SwiftUI
 public struct PianoView: View {
     @ObservedObject var keysPressed: KeysPressedModel
     @ObservedObject var showKeyNames: ShowKeyNamesModel
+    @EnvironmentObject var sharedModel: SharedModel
         
     public var body: some View {
         ZStack(alignment: .topLeading) {
@@ -48,6 +49,6 @@ public struct PianoView: View {
                 .offset(x: 24 + 48 + 48)
             }
         }
-        .background(KeyEventHandling(keysPressed: keysPressed, showKeyNames: showKeyNames))
+        .background(KeyEventHandling(keysPressed: keysPressed, showKeyNames: showKeyNames, sharedModel: sharedModel))
     }
 }

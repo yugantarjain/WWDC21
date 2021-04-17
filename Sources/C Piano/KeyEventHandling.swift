@@ -5,10 +5,12 @@ import AVFoundation
 public struct KeyEventHandling: NSViewRepresentable {
     var keysPressed: KeysPressedModel
     var showKeyNames: ShowKeyNamesModel
+    var sharedModel: SharedModel
 
     class KeyView: NSView {
         var keysPressed: KeysPressedModel
         var showKeyNames: ShowKeyNamesModel
+        var sharedModel: SharedModel
         var pianoSounds = PianoSoundsModel()
         var keysPressedCount: Int!
         
@@ -31,10 +33,11 @@ public struct KeyEventHandling: NSViewRepresentable {
             }
         }
         
-        init(keysPressed: KeysPressedModel, showKeyNames: ShowKeyNamesModel) {
+        init(keysPressed: KeysPressedModel, showKeyNames: ShowKeyNamesModel, sharedModel: SharedModel) {
             keysPressedCount = 0
             self.keysPressed = keysPressed
             self.showKeyNames = showKeyNames
+            self.sharedModel = sharedModel
             super.init(frame: NSRect(x: 0, y: 0, width: 0, height: 0))
         }
         
@@ -84,6 +87,9 @@ public struct KeyEventHandling: NSViewRepresentable {
             keysPressedCount -= 1
             if keysPressedCount < 0 { keysPressedCount = 0 }
             
+            sharedModel.tranquility += keysPressedCount / 2
+            sharedModel.productivity += keysPressedCount / 2
+            
             if let key = event.charactersIgnoringModifiers {
                 switch key {
                 case "w": keysPressed.wPressed = false; pianoSounds.wPlayer.reset(sustain: keysPressed.sustain)
@@ -113,7 +119,7 @@ public struct KeyEventHandling: NSViewRepresentable {
     }
 
     public func makeNSView(context: Context) -> NSView {
-        let view = KeyView(keysPressed: keysPressed, showKeyNames: showKeyNames)
+        let view = KeyView(keysPressed: keysPressed, showKeyNames: showKeyNames, sharedModel: sharedModel)
         DispatchQueue.main.async { // wait till next event cycle
             view.window?.makeFirstResponder(view)
         }
@@ -123,8 +129,9 @@ public struct KeyEventHandling: NSViewRepresentable {
     public func updateNSView(_ nsView: NSView, context: Context) {
     }
     
-    public init(keysPressed: KeysPressedModel, showKeyNames: ShowKeyNamesModel) {
+    public init(keysPressed: KeysPressedModel, showKeyNames: ShowKeyNamesModel, sharedModel: SharedModel) {
         self.keysPressed = keysPressed
         self.showKeyNames = showKeyNames
+        self.sharedModel = sharedModel
     }
 }
