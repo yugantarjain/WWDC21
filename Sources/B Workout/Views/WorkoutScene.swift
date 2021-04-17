@@ -3,16 +3,7 @@ import SpriteKit
 
 public struct WorkoutScene: View {
     @StateObject var workoutModel = WorkoutModel()
-    
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State private var totalTime = 0
-    var seconds: Int {
-        return totalTime % 60
-    }
-    var minutes: Int {
-        return totalTime / 60
-    }
-    
+    @EnvironmentObject var sharedModel: SharedModel
     
     public var body: some View {
         ZStack {
@@ -36,8 +27,6 @@ public struct WorkoutScene: View {
                 .offset(y: workoutModel.pushupState == .up ? 160 : 170)
             
             HStack {
-                Text("\(minutes):\(seconds, specifier: "%02d")")
-                
                 Spacer()
                 
                 Text("Reps: \(workoutModel.reps)")
@@ -51,10 +40,7 @@ public struct WorkoutScene: View {
             BackButton()
                 .frame(width: 800)
         }
-        .onReceive(timer) { input in
-            totalTime += 1
-        }
-        .background(PushupHandling(workoutModel: workoutModel))
+        .background(PushupHandling(workoutModel: workoutModel, sharedModel: sharedModel))
     }
 }
 
