@@ -40,7 +40,7 @@ public struct TraitsView: View {
         .onReceive(timer) { input in
             totalTime -= 1
             
-            if totalTime % 3 == 0 {
+            if totalTime % 3 == 0 && sharedModel.page == "" {
                 sharedModel.tranquility -= 1
                 sharedModel.fitness -= 1
                 sharedModel.productivity -= 1

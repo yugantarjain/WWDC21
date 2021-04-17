@@ -30,6 +30,7 @@ public struct PushupHandling: NSViewRepresentable {
                 if workoutModel.pushupState == .down {
                     workoutModel.pushupState = .up
                     workoutModel.reps += 1
+                    
                     sharedModel.fitness += 1
                 }
             case KeyCodeMap.down.rawValue:

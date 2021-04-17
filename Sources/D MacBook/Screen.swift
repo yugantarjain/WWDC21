@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Screen: View {
-    @EnvironmentObject var model: SharedModel
+    @EnvironmentObject var sharedModel: SharedModel
     
     var body: some View {
         ZStack {
@@ -11,7 +11,7 @@ struct Screen: View {
                 Text("Project Review")
                     .font(.title)
                 
-                TextEditor(text: $model.projectReviewText)
+                TextEditor(text: $sharedModel.projectReviewText)
             }
         }
     }
