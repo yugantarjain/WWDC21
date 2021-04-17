@@ -1,7 +1,9 @@
 import SwiftUI
 
 public struct BedScene: View {
+    @EnvironmentObject var sharedModel: SharedModel
     @State private var scaleZZZ = false
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     public var body: some View {
         ZStack {
@@ -32,6 +34,9 @@ public struct BedScene: View {
                 scaleZZZ.toggle()
             }
         })
+        .onReceive(timer) { input in
+            sharedModel.tranquility += 1
+        }
     }
 }
 
