@@ -14,7 +14,7 @@ public struct MacBookScene: View {
                     .resizable()
                     .scaledToFit()
                     .padding(.horizontal, 180)
-                    .shadow(color: .white, radius: 100)
+                    .shadow(color: .white, radius: 200)
             }
             
             Image(nsImage: NSImage(named: "macbook.png")!)

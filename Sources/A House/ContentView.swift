@@ -31,6 +31,8 @@ public struct ContentView: View {
                     .transition(.scale)
             } else if sharedModel.page == NodeNames.yogaMat {
                 WorkoutScene()
+            } else if sharedModel.page == NodeNames.bed {
+                BedScene()
             }
             
             // Traits Bar View

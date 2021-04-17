@@ -65,6 +65,8 @@ class HouseSKScene: SKScene {
         person.zPosition = 1
         person.constraints = [SKConstraint.positionX(SKRange(lowerLimit: 160 + person.frame.width / 2, upperLimit: 657 - person.frame.width / 2))]
         addChild(person)
+        
+        view.window?.nextResponder = scene
     }
     
     override func update(_ currentTime: TimeInterval) {
