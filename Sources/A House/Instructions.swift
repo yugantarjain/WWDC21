@@ -17,7 +17,7 @@ struct Instructions: View {
                 }
                 
                 Label {
-                    Text("Use the Return key to interact with the objects including doors, piano, bed, etc.")
+                    Text("Use the Return key to interact with the objects including doors, piano, bed, yoga mat, and laptop.")
                 } icon: {
                     Image(systemName: "return")
                         .padding()

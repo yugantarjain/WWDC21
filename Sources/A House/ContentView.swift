@@ -33,11 +33,13 @@ public struct ContentView: View {
                 BedScene()
             }
             
+            // Introduction
             if sharedModel.gameState == .introduction {
                 Introduction()
                     .zIndex(1)
             }
             
+            // Traits and Timer view
             if sharedModel.gameState == .gameplay {
                 VStack {
                     TraitsView()
