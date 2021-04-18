@@ -35,6 +35,7 @@ public struct TraitsView: View {
                 
                 TraitBar(name: "Productivity", colors: [Color(#colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)), Color(#colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1))], progress: sharedModel.productivity)
             }
+            .foregroundColor(.white)
             .padding(.horizontal)
         }
         .onReceive(timer) { input in

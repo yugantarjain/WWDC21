@@ -3,7 +3,7 @@ import SwiftUI
 struct TraitBar: View {
     var name: String
     var colors: [Color]
-    var progress: Int
+    var progress: CGFloat
     
     var gradient: LinearGradient {
         LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing)
@@ -22,9 +22,9 @@ struct TraitBar: View {
                 ZStack(alignment: .trailing) {
                     Capsule()
                         .fill(gradient)
-                        .frame(width: CGFloat(progress), height: 20)
+                        .frame(width: progress, height: 20)
                     
-                    Text("\(progress)")
+                    Text("\(Int(progress))")
                         .font(.subheadline)
                         .fontWeight(.medium)
                         .padding(4)

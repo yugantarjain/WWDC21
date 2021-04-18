@@ -53,6 +53,7 @@ public struct KeyEventHandling: NSViewRepresentable {
             super.keyDown(with: event)
             
             keysPressedCount += 1
+            sharedModel.updateTraitsInPiano()
             
             if let key = event.charactersIgnoringModifiers {
                 switch key {
@@ -86,9 +87,6 @@ public struct KeyEventHandling: NSViewRepresentable {
             
             keysPressedCount -= 1
             if keysPressedCount < 0 { keysPressedCount = 0 }
-            
-            sharedModel.tranquility += keysPressedCount / 2
-            sharedModel.productivity += keysPressedCount / 2
             
             if let key = event.charactersIgnoringModifiers {
                 switch key {

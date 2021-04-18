@@ -35,7 +35,7 @@ public struct BedScene: View {
             }
         })
         .onReceive(timer) { input in
-            sharedModel.tranquility += 1
+            sharedModel.updateTraitsInBed()
         }
     }
 }

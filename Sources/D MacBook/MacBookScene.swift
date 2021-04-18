@@ -2,7 +2,7 @@ import SwiftUI
 
 public struct MacBookScene: View {
     @EnvironmentObject var sharedModel: SharedModel
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     @State private var totalTime = 0
     
     @State private var textCount = 0
@@ -39,15 +39,7 @@ public struct MacBookScene: View {
             textCount = sharedModel.projectReviewText.count
         }
         .onReceive(timer) { input in
-            // Productivity
-            let newTextCount = sharedModel.projectReviewText.count
-            let difference = abs(newTextCount - textCount)
-            textCount = newTextCount
-            sharedModel.productivity += difference / 2
-            
-            // Fitness
-            totalTime += 1
-            sharedModel.fitness -= totalTime % 2
+            sharedModel.updateTraitsInMacBook(textCount: &textCount)
         }
     }
 }
