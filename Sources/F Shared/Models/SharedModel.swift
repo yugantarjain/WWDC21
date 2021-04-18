@@ -11,9 +11,9 @@ public class SharedModel: ObservableObject {
     var personPosition = CGPoint(x: 260, y: 140)
     
     // Trait values
-    var tranquility: CGFloat = 50
-    var fitness: CGFloat = 50
-    var productivity: CGFloat = 50
+    @Clamping(0...100) var tranquility: CGFloat = 50
+    @Clamping(0...100) var fitness: CGFloat = 50
+    @Clamping(0...100) var productivity: CGFloat = 50
     
     // Trait updation methods
     func updateTraitsInPiano() {
@@ -34,7 +34,7 @@ public class SharedModel: ObservableObject {
         let newTextCount = projectReviewText.count
         let difference = abs(newTextCount - textCount)
         textCount = newTextCount
-        productivity += CGFloat(sqrt(Double(difference)) / 2)
+        productivity += CGFloat(sqrt(Double(difference/2)))
         
         // Updated solely with time interval
         fitness -= 0.025

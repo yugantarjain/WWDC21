@@ -4,7 +4,7 @@ public struct TraitsView: View {
     @EnvironmentObject var sharedModel: SharedModel
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State private var totalTime = 150
+    @State @Clamping(0...150) private var totalTime = 150
     
     var seconds: Int {
         return totalTime % 60
