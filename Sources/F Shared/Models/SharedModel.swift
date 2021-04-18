@@ -7,6 +7,12 @@ public class SharedModel: ObservableObject {
     // Text used in macbook screen
     @Published var projectReviewText = "Type here"
     
+    // Game State
+    enum GameState {
+        case introduction, gameplay, over
+    }
+    @Published var gameState: GameState = .introduction
+    
     // Position of person in house scene
     var personPosition = CGPoint(x: 260, y: 140)
     

@@ -25,22 +25,26 @@ public struct ContentView: View {
             // Specific Objects Scene
             if sharedModel.page == NodeNames.piano {
                 PianoScene()
-                    .transition(.opacity)
             } else if sharedModel.page == NodeNames.workTable {
                 MacBookScene()
-                    .transition(.scale)
             } else if sharedModel.page == NodeNames.yogaMat {
                 WorkoutScene()
             } else if sharedModel.page == NodeNames.bed {
                 BedScene()
             }
             
-            // Traits Bar View
-            VStack {
-                TraitsView()
-                    .frame(width: Layout.width, height: 40)
-                
-                Spacer()
+            if sharedModel.gameState == .introduction {
+                Introduction()
+                    .zIndex(1)
+            }
+            
+            if sharedModel.gameState == .gameplay {
+                VStack {
+                    TraitsView()
+                        .frame(width: Layout.width, height: 40)
+                    
+                    Spacer()
+                }
             }
         }
         .environmentObject(sharedModel)
