@@ -5,7 +5,7 @@ struct Introduction: View {
     @State private var showingInstructions = false
     @State private var showingConcept = false
     
-    let concept = "With the ongoing global health situation, we have been spending a lot of our time in our houses and our rooms.\n\n\nThis project (Life Inside a House) tries to simulate that reality in a game environment.\n\n\nThere's no definite way to play the game, it is up to you. Through this project you can have fun, introspect, experiment, and even learn a little piano :)"
+    let concept = "With the ongoing global health situation, we have been spending a lot of our time in our houses and our rooms.\n\n\nThis project (Life Inside a House) tries to simulate that reality in a game environment.\n\n\nThere's no definite way to play the game, it is up to you. Through this project you can have fun, introspect, experiment, and even learn a few new things."
 
     var body: some View {
         ZStack {

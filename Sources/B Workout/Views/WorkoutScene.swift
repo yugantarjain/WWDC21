@@ -40,7 +40,7 @@ public struct WorkoutScene: View {
             }
             .font(.system(size: 32, weight: .black, design: .monospaced))
             .foregroundColor(.white)
-            .padding(40)
+            .padding(30)
             .offset(y: -80)
             .frame(width: Layout.width)
             
