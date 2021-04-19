@@ -4,7 +4,7 @@ public struct TraitsView: View {
     @EnvironmentObject var sharedModel: SharedModel
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State @Clamping(0...150) private var totalTime = 150
+    @State private var totalTime = 5
     
     var seconds: Int {
         return totalTime % 60
@@ -40,6 +40,12 @@ public struct TraitsView: View {
         }
         .onReceive(timer) { input in
             totalTime -= 1
+            
+            if totalTime == 0 {
+                withAnimation {
+                    sharedModel.gameState = .over
+                }
+            }
             
             if totalTime % 3 == 0 && sharedModel.page == "" {
                 sharedModel.tranquility -= 1

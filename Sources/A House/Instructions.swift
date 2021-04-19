@@ -50,6 +50,7 @@ struct Instructions: View {
                     sharedModel.gameState = .gameplay
                 }
             }
+            .foregroundColor(.primary)
         }
         .padding(20)
         .font(.system(size: 16, weight: .medium, design: .monospaced))

@@ -37,6 +37,9 @@ public struct ContentView: View {
             if sharedModel.gameState == .introduction {
                 Introduction()
                     .zIndex(1)
+            } else if sharedModel.gameState == .over {
+                End()
+                    .transition(.move(edge: .bottom))
             }
             
             // Traits and Timer view

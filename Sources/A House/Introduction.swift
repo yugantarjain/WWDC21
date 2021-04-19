@@ -12,8 +12,9 @@ struct Introduction: View {
             if showingInstructions {
                 Instructions()
             } else {
-                Text("Life Inside A House ")
+                Text("Life Inside a House")
                     .font(.system(size: 72, weight: .medium, design: .monospaced))
+                    .foregroundColor(.white)
                     .zIndex(1)
             }
         }
