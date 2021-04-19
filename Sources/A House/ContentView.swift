@@ -1,8 +1,10 @@
 import SwiftUI
 import SpriteKit
+import AVFoundation
 
 public struct ContentView: View {
     @StateObject var sharedModel = SharedModel()
+    let backgroundSounds = BackgroundSounds()
         
     var scene: HouseSKScene {
         let scene = HouseSKScene()
@@ -21,16 +23,32 @@ public struct ContentView: View {
                 .frame(width: Layout.width, height: Layout.height)
                 .offset(y: 20)
                 .ignoresSafeArea()
-            
+                .onAppear {
+                    backgroundSounds.housePlayer.play()
+                }
             // Specific Objects Scene
-            if sharedModel.page == NodeNames.piano {
-                PianoScene()
-            } else if sharedModel.page == NodeNames.workTable {
-                MacBookScene()
-            } else if sharedModel.page == NodeNames.yogaMat {
-                WorkoutScene()
-            } else if sharedModel.page == NodeNames.bed {
-                BedScene()
+            Group {
+                if sharedModel.page == NodeNames.piano {
+                    PianoScene()
+                } else if sharedModel.page == NodeNames.workTable {
+                    MacBookScene()
+                } else if sharedModel.page == NodeNames.yogaMat {
+                    WorkoutScene()
+                        .onAppear {
+                            backgroundSounds.workoutPlayer.play()
+                        }
+                        .onDisappear {
+                            backgroundSounds.workoutPlayer.pause()
+                        }
+                } else if sharedModel.page == NodeNames.bed {
+                    BedScene()
+                }
+            }
+            .onAppear {
+                backgroundSounds.housePlayer.pause()
+            }
+            .onDisappear {
+                backgroundSounds.housePlayer.play()
             }
             
             // Introduction
