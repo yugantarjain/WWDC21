@@ -14,8 +14,8 @@ struct End: View {
 
     var body: some View {
         ZStack {
-            Color.black
-                .opacity(0.8)
+            Color(.windowBackgroundColor)
+                .opacity(0.9)
             
             VStack(alignment: .center, spacing: 80) {
                 Text("Time Over!")
@@ -23,7 +23,7 @@ struct End: View {
                                 
                 VStack(spacing: 50) {
                     Text("Your traits have changed in the following manner:")
-                        .font(.largeTitle)
+                        .font(.system(size: 20, weight: .regular, design: .monospaced))
 
                     Label {
                         Text(differenceWithSign(number1: sharedModel.tranquility))
@@ -51,7 +51,6 @@ struct End: View {
                 }
                 .font(.system(size: 16, weight: .medium, design: .monospaced))
             }
-            .foregroundColor(.white)
         }
     }
 }
