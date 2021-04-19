@@ -18,7 +18,7 @@ public struct PianoScene: View {
                 .frame(width: 610, height: 300, alignment: .center)
                 .cornerRadius(8)
                 .padding()
-                .shadow(color: .white, radius: 10)
+                .shadow(color: .white, radius: 50)
             
             VStack(spacing: 64) {
                 HStack(alignment: .top) {

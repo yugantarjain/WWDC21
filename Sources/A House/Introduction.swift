@@ -6,15 +6,15 @@ struct Introduction: View {
 
     var body: some View {
         ZStack {
-            Color.black
-                .opacity(showingInstructions ? 0.8 : 1.0)
+            Color(.textBackgroundColor)
+                .opacity(showingInstructions ? 0.9 : 1.0)
             
             if showingInstructions {
                 Instructions()
             } else {
                 Text("Life Inside a House")
                     .font(.system(size: 72, weight: .medium, design: .monospaced))
-                    .foregroundColor(.white)
+                    .opacity(showingInstructions ? 0 : 1)
                     .zIndex(1)
             }
         }

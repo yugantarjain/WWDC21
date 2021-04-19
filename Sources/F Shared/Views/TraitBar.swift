@@ -26,6 +26,7 @@ struct TraitBar: View {
                     
                     Text("\(Int(progress))")
                         .font(.subheadline)
+                        .foregroundColor(.white)
                         .fontWeight(.medium)
                         .padding(4)
                 }

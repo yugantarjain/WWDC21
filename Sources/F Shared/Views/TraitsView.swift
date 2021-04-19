@@ -4,7 +4,7 @@ public struct TraitsView: View {
     @EnvironmentObject var sharedModel: SharedModel
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State private var totalTime = 5
+    @State private var totalTime = 150
     
     var seconds: Int {
         return totalTime % 60
@@ -16,7 +16,7 @@ public struct TraitsView: View {
     public var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(.black)
+                .foregroundColor(Color(.windowBackgroundColor))
                 .opacity(0.5)
             
             HStack {
