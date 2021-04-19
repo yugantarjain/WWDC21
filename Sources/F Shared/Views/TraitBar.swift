@@ -16,7 +16,7 @@ struct TraitBar: View {
             
             ZStack(alignment: .leading) {
                 Capsule()
-                    .fill(Color.gray)
+                    .opacity(0.5)
                     .frame(width: 100, height: 20)
                 
                 ZStack(alignment: .trailing) {
