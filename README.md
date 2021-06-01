@@ -13,3 +13,5 @@ There's no definite way to play the game, it is up to the user. Through this pro
 ![Excercise](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Excercise.png)
 ![Piano](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Piano.png)
 ![End](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/End.png)
+
+* Kindly visit the Screenshots folder for complete reference.
