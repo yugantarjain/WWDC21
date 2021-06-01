@@ -8,3 +8,11 @@ This project (Life Inside a House) tries to simulate that reality in a game envi
 There's no definite way to play the game, it is up to the user. Through this project the users can have fun, introspect, experiment, and even learn a few new things (like the piano :D).
 
 # Screenshots
+![Splash](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Splash.png)
+![Intro](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Intro.png)
+![House](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/House.png)
+![Excercise](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Excercise.png)
+![Piano](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Piano.png)
+![Laptop](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Laptop.png)
+![Bed](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Bed.png)
+![End](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/End.png)
