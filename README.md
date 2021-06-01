@@ -12,6 +12,4 @@ There's no definite way to play the game, it is up to the user. Through this pro
 ![House](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/House.png)
 ![Excercise](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Excercise.png)
 ![Piano](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Piano.png)
-![Laptop](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Laptop.png)
-![Bed](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/Bed.png)
 ![End](https://github.com/yugantarjain/WWDC21/blob/master/Screenshots/End.png)
